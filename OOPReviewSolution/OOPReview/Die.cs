@@ -80,7 +80,7 @@ namespace OOPReview
         //The only wat to access the data of an Auto Implemented Property is via
         // the property
         //usually use when there is no need for any internal validation  or other property logic
-        public int FaceValue { get; set; }
+        public int FaceValue { get; private set; }
 
         public string Color
         {
@@ -144,14 +144,14 @@ namespace OOPReview
         //this constructor allows the outside user to create and assign their
         //  own values to the data members/auto properties at the time of
         //  instance creation
-        public Die(int sides, string color, int facevalue)
+        public Die(int sides, string color)
         {
             //since this data is coming from an outside source, it is best
             //  to use your property to save the values; especially if the
             //  property has validation
             Sides = sides;
             Color = color;
-            FaceValue = facevalue;
+            Roll();
         }
 
         //Behaviors (methods)
